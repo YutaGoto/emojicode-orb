@@ -1,0 +1,12 @@
+description: >
+  This is a sample executor using Docker and Node.
+
+docker:
+  - image: gcc:<<parameters.tag>>
+parameters:
+  tag:
+    default: latest
+    description: >
+      choose gcc version
+      https://hub.docker.com/_/gcc
+    type: string

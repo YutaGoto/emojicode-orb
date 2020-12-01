@@ -1,0 +1,12 @@
+description: >
+  run emojicode install example
+
+usage:
+  version: 2.1
+  orbs:
+    emojicode-orb: yutagoto/emojicode-orb@volatile
+  workflows:
+    install-emojicode:
+      jobs:
+        - emojicode-orb/install:
+            version: "1.0-beta.2"

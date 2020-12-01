@@ -1,0 +1,9 @@
+version: 2.1
+
+description: >
+  Easily install emojicode.
+  Emojicode is https://www.emojicode.org/
+
+display:
+  home_url: "https://github.com/YutaGoto"
+  source_url: "https://github.com/YutaGoto/emojicode-orb"
