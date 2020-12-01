@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  emojicode-orb: yutagoto/emojicode-orb@<<pipeline.parameters.dev-orb-version>>
+  emojicode-orb: yutagoto/emojicode@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@10.0
 
 parameters:
@@ -37,7 +37,7 @@ workflows:
             - orb-tools/lint
             - orb-tools/pack
       - orb-tools/publish-dev:
-          orb-name: yutagoto/emojicode-orb
+          orb-name: yutagoto/emojicode
           context: <publishing-context>
           requires: [hold-for-dev-publish]
       - orb-tools/trigger-integration-tests-workflow:
@@ -51,7 +51,7 @@ workflows:
     jobs:
       - integration-test-1
       - orb-tools/dev-promote-prod-from-commit-subject:
-          orb-name: yutagoto/emojicode-orb
+          orb-name: yutagoto/emojicode
           context: <publishing-context>
           add-pr-comment: false
           fail-if-semver-not-indicated: true
