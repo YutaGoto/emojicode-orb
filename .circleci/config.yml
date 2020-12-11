@@ -29,8 +29,8 @@ workflows:
   test-pack:
     unless: << pipeline.parameters.run-integration-tests >>
     jobs:
-      - orb-tools/lint # Lint Yaml files
-      - orb-tools/pack # Pack orb source
+      - orb-tools/lint
+      - orb-tools/pack
       - hold-for-dev-publish:
           type: approval
           requires:
