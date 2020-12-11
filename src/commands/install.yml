@@ -9,7 +9,7 @@ parameters:
 steps:
   - run:
       name: install some module
-      command: apt update && apt install -y rsync libncurses5
+      command: sudo apt update && sudo apt install -y rsync libncurses5
   - run:
       name: install emojicode
       command: |
