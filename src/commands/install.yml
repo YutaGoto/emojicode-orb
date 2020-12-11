@@ -8,14 +8,12 @@ parameters:
     description: "choose emojicode version"
 steps:
   - run:
-    name: install some module
-    command: |
-      apt update && \
-      apt install -y rsync libncurses5
+      name: install some module
+      command: apt update && apt install -y rsync libncurses5
   - run:
-    name: install emojicode
-    command: |
-      wget https://github.com/emojicode/emojicode/releases/download/v<<parameters.to>>/Emojicode-<<parameters.to>>-Linux-x86_64.tar.gz -O emojicode.tar.gz \
-      && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
-      && cd Emojicode-<<parameters.to>>-Linux-x86_64 && yes | ./install.sh || true \
-      && cd ..
+      name: install emojicode
+      command: |
+        wget https://github.com/emojicode/emojicode/releases/download/v<<parameters.version>>/Emojicode-<<parameters.version>>-Linux-x86_64.tar.gz -O emojicode.tar.gz \
+        && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
+        && cd Emojicode-<<parameters.version>>-Linux-x86_64 && yes | ./install.sh || true \
+        && cd ..
